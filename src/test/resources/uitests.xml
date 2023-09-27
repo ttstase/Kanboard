@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Use tests automation">
+
+    <test name="Regression testing">
+        <classes>
+            <class name="ui.tests.LoginTests"/>
+            <class name="ui.tests.NewUserLoginTests"/>
+            <class name="ui.tests.ProjectTests"/>
+            <class name="ui.tests.NewTaskTest"/>
+            <class name="ui.tests.CloseTaskTest"/>
+            <class name="ui.tests.CommentTests"/>
+        </classes>
+
+    </test>
+</suite>
