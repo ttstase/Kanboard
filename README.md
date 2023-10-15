@@ -5,7 +5,7 @@
 * run the command $ docker compose up on the folder with the file
 * make sure that the container with Kanboard app is running
 * Token is unique for each localhost --> TBM in upcoming test refactoring
-* Login: admin password: admin
+* Login: admin, password: admin
 * Navigate to get API token: Settings/API
 * Change token value in env.properties
 
