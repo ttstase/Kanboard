@@ -3,14 +3,17 @@ package ui.steps;
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.Step;
 import ui.elements.MainElements;
+import utils.TestConfig;
 
 import static com.codeborne.selenide.Selenide.open;
 
 public class MainPage extends MainElements {
 
+    String loginPageUrl = TestConfig.LOGIN_PAGE_URL;
+
     @Step("Opening login page")
     public MainPage openLoginPage() {
-        open("http://localhost/login");
+        open(loginPageUrl);
         return new MainPage();
     }
 

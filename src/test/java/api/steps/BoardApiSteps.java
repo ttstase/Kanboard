@@ -25,7 +25,5 @@ public class BoardApiSteps extends BaseApiSteps {
 
         Response response = postRequest(API_USERNAME, API_TOKEN, bodyArgs);
         return response.as(new TypeRef<Result<List<BoardInfo>>>() {});
-
-//        return response.as(Result.class);
     }
 }

@@ -11,15 +11,15 @@ import ui.steps.LoginSteps;
 import utils.TestConfig;
 
 public class NewUserLoginTests extends BaseTest{
-    private final static String NEW_USER_NAME = "user111";
-    private final static String NEW_USER_PASS = "pass111";
+    String newUserName = TestConfig.NEW_USER_NAME;
+    String newUserPass = TestConfig.NEW_USER_PASS;
     String dashboardUrl = TestConfig.DASHBOARD_URL;
     UserApiSteps userApiSteps = new UserApiSteps();
     private String userId;
 
     @BeforeMethod
     public void createUser(){
-        userId = userApiSteps.createUser(NEW_USER_NAME, NEW_USER_PASS);
+        userId = userApiSteps.createUser(newUserName, newUserPass);
     }
 
     @Test
@@ -27,7 +27,7 @@ public class NewUserLoginTests extends BaseTest{
     public void newUserLoginTest() {
         new LoginSteps()
                 .openLoginPage()
-                .loginByUser(NEW_USER_NAME, NEW_USER_PASS);
+                .loginByUser(newUserName, newUserPass);
         Assert.assertEquals(WebDriverRunner.getWebDriver().getCurrentUrl(), dashboardUrl
                 , "The login was not successful");
     }
@@ -37,7 +37,7 @@ public class NewUserLoginTests extends BaseTest{
     public void negativeNewUserLoginTest() {
         new LoginSteps()
                 .openLoginPage()
-                .loginByUser(NEW_USER_NAME, "");
+                .loginByUser(newUserName, "");
         Assert.assertNotEquals(WebDriverRunner.getWebDriver().getCurrentUrl(), dashboardUrl
                 , "The login was successful");
     }
